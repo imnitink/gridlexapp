@@ -1,4 +1,4 @@
-import 'package:gridlexapp/data/model/form_model.dart';
+
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 class SqliteService {
@@ -20,7 +20,7 @@ class SqliteService {
                ")",
       );*/
          await database.execute(
-             'CREATE TABLE Form (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, mobileNo TEXT, email TEXT, dob TEXT, profilePicLink TEXT, status TEXT)');
+             'CREATE TABLE Form (id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT, time TEXT, description TEXT, title TEXT)');
 
      },
      version: 1,
@@ -32,12 +32,10 @@ class SqliteService {
   static Future<void> createTables(Database database) async{
     await database.execute("""CREATE TABLE IF NOT EXISTS Form (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        mobileNo TEXT NOT NULL,
-        email TEXT NOT NULL,
-        dob TEXT NOT NULL,
-        profilePicLink TEXT NOT NULL,
-        status TEXT NOT NULL,
+        date TEXT NOT NULL,
+        time TEXT NOT NULL,
+        description TEXT NOT NULL,
+        title TEXT NOT NULL,
       )      
       """);
   }

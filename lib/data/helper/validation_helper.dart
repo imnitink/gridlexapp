@@ -31,7 +31,7 @@ class ValidationHelper {
 
   static String validateFirstNameController(String firstName) {
     if (firstName.isEmpty) {
-      return "Please enter valid name";
+      return "Please enter valid value";
     } else {
       return "";
     }
